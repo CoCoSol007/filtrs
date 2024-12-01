@@ -42,14 +42,16 @@ struct Item {
 }
 
 /// Represents an interaction between a user and an item
-/// Must implement the `Interact` trait
+/// Must derive `Interact`
+#[derive(Interact)]
 struct Interaction {
-    ...
-}
-
-impl Interact for Interaction {
-    // Define the required methods for the Interact trait here
-    ...
+    // For example 
+    #[weight(80)]
+    like: bool,
+    #[weight(10)]
+    score: u8,
+    #[weight(120)]
+    time: f32,
 }
 ```
 
